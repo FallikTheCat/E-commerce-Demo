@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,10 @@
 		4E2B4E9225F1445700D3C14C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B4E9125F1445700D3C14C /* ContentView.swift */; };
 		4E2B4E9425F1445800D3C14C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E2B4E9325F1445800D3C14C /* Assets.xcassets */; };
 		4E2B4E9725F1445800D3C14C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E2B4E9625F1445800D3C14C /* Preview Assets.xcassets */; };
+		4EF837C825F1488200725152 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF837C725F1488200725152 /* GoogleService-Info.plist */; };
+		4EF837CB25F15EA500725152 /* AddNewProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF837CA25F15EA500725152 /* AddNewProductView.swift */; };
+		4EF837CE25F17BB200725152 /* ProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF837CD25F17BB200725152 /* ProductInfo.swift */; };
+		965F7F1D12B83124A0E02DD3 /* Pods_MobirollerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57051D746483415BD4BBCD86 /* Pods_MobirollerApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,12 @@
 		4E2B4E9325F1445800D3C14C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E2B4E9625F1445800D3C14C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4E2B4E9825F1445800D3C14C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EF837C725F1488200725152 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4EF837CA25F15EA500725152 /* AddNewProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProductView.swift; sourceTree = "<group>"; };
+		4EF837CD25F17BB200725152 /* ProductInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfo.swift; sourceTree = "<group>"; };
+		57051D746483415BD4BBCD86 /* Pods_MobirollerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobirollerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BA156390053CC3E20AE084D /* Pods-MobirollerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobirollerApp.debug.xcconfig"; path = "Target Support Files/Pods-MobirollerApp/Pods-MobirollerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		FB500D000329FFD59830B716 /* Pods-MobirollerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobirollerApp.release.xcconfig"; path = "Target Support Files/Pods-MobirollerApp/Pods-MobirollerApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				965F7F1D12B83124A0E02DD3 /* Pods_MobirollerApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +49,8 @@
 			children = (
 				4E2B4E8E25F1445700D3C14C /* MobirollerApp */,
 				4E2B4E8D25F1445700D3C14C /* Products */,
+				81E1B74A85821909B0E7FBE1 /* Pods */,
+				ADF6C9F33E8E4B363ABF0AE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,10 +65,12 @@
 		4E2B4E8E25F1445700D3C14C /* MobirollerApp */ = {
 			isa = PBXGroup;
 			children = (
+				4EF837D025F17BF800725152 /* AddProduct */,
 				4E2B4E8F25F1445700D3C14C /* MobirollerAppApp.swift */,
 				4E2B4E9125F1445700D3C14C /* ContentView.swift */,
 				4E2B4E9325F1445800D3C14C /* Assets.xcassets */,
 				4E2B4E9825F1445800D3C14C /* Info.plist */,
+				4EF837C725F1488200725152 /* GoogleService-Info.plist */,
 				4E2B4E9525F1445800D3C14C /* Preview Content */,
 			);
 			path = MobirollerApp;
@@ -69,6 +84,32 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		4EF837D025F17BF800725152 /* AddProduct */ = {
+			isa = PBXGroup;
+			children = (
+				4EF837CA25F15EA500725152 /* AddNewProductView.swift */,
+				4EF837CD25F17BB200725152 /* ProductInfo.swift */,
+			);
+			path = AddProduct;
+			sourceTree = "<group>";
+		};
+		81E1B74A85821909B0E7FBE1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6BA156390053CC3E20AE084D /* Pods-MobirollerApp.debug.xcconfig */,
+				FB500D000329FFD59830B716 /* Pods-MobirollerApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		ADF6C9F33E8E4B363ABF0AE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57051D746483415BD4BBCD86 /* Pods_MobirollerApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -76,9 +117,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E2B4E9B25F1445800D3C14C /* Build configuration list for PBXNativeTarget "MobirollerApp" */;
 			buildPhases = (
+				83680A1E9CDFD63FC1D90102 /* [CP] Check Pods Manifest.lock */,
 				4E2B4E8825F1445700D3C14C /* Sources */,
 				4E2B4E8925F1445700D3C14C /* Frameworks */,
 				4E2B4E8A25F1445700D3C14C /* Resources */,
+				D6AFF6B7564AA1ED799EE179 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,16 +171,61 @@
 			files = (
 				4E2B4E9725F1445800D3C14C /* Preview Assets.xcassets in Resources */,
 				4E2B4E9425F1445800D3C14C /* Assets.xcassets in Resources */,
+				4EF837C825F1488200725152 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		83680A1E9CDFD63FC1D90102 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MobirollerApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6AFF6B7564AA1ED799EE179 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobirollerApp/Pods-MobirollerApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobirollerApp/Pods-MobirollerApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobirollerApp/Pods-MobirollerApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4E2B4E8825F1445700D3C14C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EF837CB25F15EA500725152 /* AddNewProductView.swift in Sources */,
+				4EF837CE25F17BB200725152 /* ProductInfo.swift in Sources */,
 				4E2B4E9225F1445700D3C14C /* ContentView.swift in Sources */,
 				4E2B4E9025F1445700D3C14C /* MobirollerAppApp.swift in Sources */,
 			);
@@ -264,6 +352,7 @@
 		};
 		4E2B4E9C25F1445800D3C14C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BA156390053CC3E20AE084D /* Pods-MobirollerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -285,6 +374,7 @@
 		};
 		4E2B4E9D25F1445800D3C14C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB500D000329FFD59830B716 /* Pods-MobirollerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
