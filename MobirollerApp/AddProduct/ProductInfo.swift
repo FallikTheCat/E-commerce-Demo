@@ -9,8 +9,6 @@ import Combine
 
 class ProductInfo: ObservableObject {
     
-    var didChange = PassthroughSubject<Void, Never>()
-    
     //Static Categories
     static let categories = ["Art", "Electronics", "Fashion", "Health", "Home", "Sports", "Tools & Equipment"]
     

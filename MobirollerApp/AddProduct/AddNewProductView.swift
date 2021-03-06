@@ -10,7 +10,12 @@ import FirebaseDatabase
 
 struct AddNewProductView: View {
     
+    @ObservedObject var products: GetProducts
+    
     private let database = Database.database().reference()
+    
+    //Creating a unique id for the product
+    let uuid = UUID().uuidString
     
     //Converting current date format to string
     let currentDate: String = {
@@ -28,19 +33,14 @@ struct AddNewProductView: View {
             "date": currentDate,
             "details": $product.productDetails.wrappedValue,
             "name": $product.productName.wrappedValue,
-            "price": $product.productPrice.wrappedValue
+            "price": $product.productPrice.wrappedValue,
+            "stock": $product.stock.wrappedValue
         ]
         
-        database.child("Products").child("Category\($product.category.wrappedValue)").child("SN\(Int.random(in: 0..<100))").setValue(productInfo)
-    }
-    
-    func getProducts() {
-        database.child("Products").observeSingleEvent(of: .value, with: { snapshot in
-            guard let value = snapshot.value as? [String: Any] else {
-                return
-            }
-            print("Value: \(value)")
-        })
+        database.child("Products").child("\(uuid)").setValue(productInfo)
+        
+        //
+        products.productList.append($product.productName.wrappedValue)
     }
     
     @ObservedObject var product = ProductInfo()
@@ -82,11 +82,5 @@ struct AddNewProductView: View {
             .navigationBarTitle(Text("Add New Product"))
         }
         
-    }
-}
-
-struct AddNewProductView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddNewProductView()
     }
 }
