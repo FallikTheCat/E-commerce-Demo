@@ -6,6 +6,7 @@
 //
 
 import Combine
+import SwiftUI
 
 class ProductInfo: ObservableObject {
     
@@ -18,13 +19,5 @@ class ProductInfo: ObservableObject {
     @Published var productName: String = ""
     @Published var productDetails: String = ""
     @Published var productPrice: String = ""
-    
-    //Checking if all information has been entered
-    var isValid: Bool {
-        if productName == "" || productDetails == "" || productPrice == "" {
-            return false
-        }
-        
-        return true
-    }
+    @Published var productImage: Image?
 }

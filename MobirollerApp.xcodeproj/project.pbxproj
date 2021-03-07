@@ -14,6 +14,7 @@
 		4E2B4E9225F1445700D3C14C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B4E9125F1445700D3C14C /* ContentView.swift */; };
 		4E2B4E9425F1445800D3C14C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E2B4E9325F1445800D3C14C /* Assets.xcassets */; };
 		4E2B4E9725F1445800D3C14C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E2B4E9625F1445800D3C14C /* Preview Assets.xcassets */; };
+		4EC12D1425F44E4C0090B3E1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC12D1325F44E4C0090B3E1 /* ImagePicker.swift */; };
 		4EF837C825F1488200725152 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF837C725F1488200725152 /* GoogleService-Info.plist */; };
 		4EF837CB25F15EA500725152 /* AddNewProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF837CA25F15EA500725152 /* AddNewProductView.swift */; };
 		4EF837CE25F17BB200725152 /* ProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF837CD25F17BB200725152 /* ProductInfo.swift */; };
@@ -30,6 +31,7 @@
 		4E2B4E9325F1445800D3C14C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E2B4E9625F1445800D3C14C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4E2B4E9825F1445800D3C14C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EC12D1325F44E4C0090B3E1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		4EF837C725F1488200725152 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4EF837CA25F15EA500725152 /* AddNewProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProductView.swift; sourceTree = "<group>"; };
 		4EF837CD25F17BB200725152 /* ProductInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfo.swift; sourceTree = "<group>"; };
@@ -83,8 +85,8 @@
 			children = (
 				4E107FC025F28B4C001D731F /* ShowProducts */,
 				4EF837D025F17BF800725152 /* AddProduct */,
-				4E2B4E8F25F1445700D3C14C /* MobirollerAppApp.swift */,
 				4E2B4E9125F1445700D3C14C /* ContentView.swift */,
+				4E2B4E8F25F1445700D3C14C /* MobirollerAppApp.swift */,
 				4E2B4E9325F1445800D3C14C /* Assets.xcassets */,
 				4E2B4E9825F1445800D3C14C /* Info.plist */,
 				4EF837C725F1488200725152 /* GoogleService-Info.plist */,
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				4EF837CA25F15EA500725152 /* AddNewProductView.swift */,
+				4EC12D1325F44E4C0090B3E1 /* ImagePicker.swift */,
 				4EF837CD25F17BB200725152 /* ProductInfo.swift */,
 			);
 			path = AddProduct;
@@ -246,6 +249,7 @@
 				4E2B4E9225F1445700D3C14C /* ContentView.swift in Sources */,
 				4E2B4E9025F1445700D3C14C /* MobirollerAppApp.swift in Sources */,
 				4E107FC525F297AE001D731F /* ProductDetails.swift in Sources */,
+				4EC12D1425F44E4C0090B3E1 /* ImagePicker.swift in Sources */,
 				4E107FC825F29D7E001D731F /* GetProducts.swift in Sources */,
 				4E107FC225F28B5E001D731F /* ProductsView.swift in Sources */,
 			);

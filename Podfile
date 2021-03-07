@@ -8,5 +8,6 @@ target 'MobirollerApp' do
   # Pods for MobirollerApp
 
 pod 'Firebase/Database'
+pod 'Firebase/Storage'
 
 end
