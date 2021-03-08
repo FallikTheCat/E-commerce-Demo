@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  MobirollerApp
+
+  Created by Baturay Koç on 8.03.2021.
+  
+*/
+
+"Products" = "Ürünler";
+"AddProduct" = "Ürün Ekle";
+"ProductList" = "Ürün Listesi";
+"AddNewProduct" = "Yeni Ürün Ekle";
+"SelectCategory" = "Kategori Seç";
+"InStock" = "Stok:";
+"ProductName" = "Ürün Adı";
+"Price" = "Fiyat";
+"Details" = "Açıklama:";
+"AddPicture" = "Fotoğraf Yükle";
+"Success" = "Ürünün başarılı bir şekilde eklendi!";
+"Name" = "Ad:";
+"Date" = "Eklendiği Tarih:";
+"Price2" = "Fiyat:";
+"Stock" = "Stok:";
+"Category" = "Kategori:";
+"Edit" = "Düzenle";
+"EditProduct" = "Ürünü Düzenle";
+"Okay" = "Tamamdır!";
+"Done" = "Tamamla";
+"Success2" = "Ürünün başarılı bir şekilde düzenlendi!";

@@ -31,7 +31,7 @@ struct ContentView: View {
                         Text("Add Product")
                     }else {
                         Image(systemName: "icloud.and.arrow.up.fill")
-                        Text("Add Product")
+                        Text("AddProduct")
                     }
                 }.tag(1)
         }.onAppear(perform: products.getProducts)

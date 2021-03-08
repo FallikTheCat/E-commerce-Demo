@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  MobirollerApp
+
+  Created by Baturay Koç on 8.03.2021.
+  
+*/
+
+"Products" = "Products";
+"AddProduct" = "Add Product";
+"ProductList" = "Product List";
+"AddNewProduct" = "Add New Product";
+"SelectCategory" = "Select Category";
+"InStock" = "In Stock:";
+"ProductName" = "Product Name";
+"Price" = "Price";
+"Details" = "Details:";
+"AddPicture" = "Add Picture";
+"Success" = "Your Product Has Been Successfully Added!";
+"Name" = "Name:";
+"Date" = "Date:";
+"Price2" = "Price:";
+"Stock" = "Stock:";
+"Category" = "Category:";
+"Edit" = "Edit";
+"EditProduct" = "Edit Your Product";
+"Okay" = "Okay!";
+"Done" = "Done";
+"Success2" = "Your Product Has Been Successfully Edited!";
+

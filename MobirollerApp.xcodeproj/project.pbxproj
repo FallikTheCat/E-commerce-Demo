@@ -14,6 +14,8 @@
 		4E2B4E9225F1445700D3C14C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B4E9125F1445700D3C14C /* ContentView.swift */; };
 		4E2B4E9425F1445800D3C14C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E2B4E9325F1445800D3C14C /* Assets.xcassets */; };
 		4E2B4E9725F1445800D3C14C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E2B4E9625F1445800D3C14C /* Preview Assets.xcassets */; };
+		4E47916825F68B15002C7970 /* EditProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E47916725F68B15002C7970 /* EditProduct.swift */; };
+		4E47917A25F69E45002C7970 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E47917C25F69E45002C7970 /* Localizable.strings */; };
 		4EC12D1425F44E4C0090B3E1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC12D1325F44E4C0090B3E1 /* ImagePicker.swift */; };
 		4EF837C825F1488200725152 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF837C725F1488200725152 /* GoogleService-Info.plist */; };
 		4EF837CB25F15EA500725152 /* AddNewProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF837CA25F15EA500725152 /* AddNewProductView.swift */; };
@@ -31,6 +33,9 @@
 		4E2B4E9325F1445800D3C14C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E2B4E9625F1445800D3C14C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4E2B4E9825F1445800D3C14C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E47916725F68B15002C7970 /* EditProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProduct.swift; sourceTree = "<group>"; };
+		4E47917B25F69E45002C7970 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4E47917E25F69E49002C7970 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4EC12D1325F44E4C0090B3E1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		4EF837C725F1488200725152 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4EF837CA25F15EA500725152 /* AddNewProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProductView.swift; sourceTree = "<group>"; };
@@ -58,6 +63,7 @@
 				4E107FC725F29D7E001D731F /* GetProducts.swift */,
 				4E107FC425F297AE001D731F /* ProductDetails.swift */,
 				4E107FC125F28B5E001D731F /* ProductsView.swift */,
+				4E47916725F68B15002C7970 /* EditProduct.swift */,
 			);
 			path = ShowProducts;
 			sourceTree = "<group>";
@@ -83,6 +89,7 @@
 		4E2B4E8E25F1445700D3C14C /* MobirollerApp */ = {
 			isa = PBXGroup;
 			children = (
+				4E47917C25F69E45002C7970 /* Localizable.strings */,
 				4E107FC025F28B4C001D731F /* ShowProducts */,
 				4EF837D025F17BF800725152 /* AddProduct */,
 				4E2B4E9125F1445700D3C14C /* ContentView.swift */,
@@ -173,6 +180,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = 4E2B4E8325F1445700D3C14C;
 			productRefGroup = 4E2B4E8D25F1445700D3C14C /* Products */;
@@ -190,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E2B4E9725F1445800D3C14C /* Preview Assets.xcassets in Resources */,
+				4E47917A25F69E45002C7970 /* Localizable.strings in Resources */,
 				4E2B4E9425F1445800D3C14C /* Assets.xcassets in Resources */,
 				4EF837C825F1488200725152 /* GoogleService-Info.plist in Resources */,
 			);
@@ -246,6 +255,7 @@
 			files = (
 				4EF837CB25F15EA500725152 /* AddNewProductView.swift in Sources */,
 				4EF837CE25F17BB200725152 /* ProductInfo.swift in Sources */,
+				4E47916825F68B15002C7970 /* EditProduct.swift in Sources */,
 				4E2B4E9225F1445700D3C14C /* ContentView.swift in Sources */,
 				4E2B4E9025F1445700D3C14C /* MobirollerAppApp.swift in Sources */,
 				4E107FC525F297AE001D731F /* ProductDetails.swift in Sources */,
@@ -256,6 +266,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4E47917C25F69E45002C7970 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E47917B25F69E45002C7970 /* en */,
+				4E47917E25F69E49002C7970 /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4E2B4E9925F1445800D3C14C /* Debug */ = {

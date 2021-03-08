@@ -1,30 +1,44 @@
 //
-//  AddNewProductView.swift
+//  EditProduct.swift
 //  MobirollerApp
 //
-//  Created by Baturay Koç on 4.03.2021.
+//  Created by Baturay Koç on 8.03.2021.
 //
 
 import SwiftUI
 import FirebaseDatabase
 import FirebaseStorage
 
-struct AddNewProductView: View {
+struct EditProduct: View {
+    
+    @Environment(\.presentationMode) var presentationMode
     
     private let storage = Storage.storage().reference()
     private let database = Database.database().reference()
-    
-    @ObservedObject var products: GetProducts
-    @ObservedObject var product = ProductInfo()
     
     @State private var showingImagePicker = false
     
     @State private var loading = false
     @State private var showAlert = false
-    @State private var inputImage: UIImage?
+    @State var inputImage: UIImage?
     
-    //Creating a unique id for the product
-    let uuid = UUID().uuidString
+    @State var productCategory: Int
+    @State var productDetails: String
+    @State var productId: String
+    @State var productName: String
+    @State var productPhotoURL: String
+    @State var productPrice: String
+    @State var productStock: Int
+    
+    @State var productImage: Image?
+    
+    @State private var categories = ["Art", "Electronics", "Fashion", "Health", "Home", "Sports", "Tools & Equipment"]
+    
+    //Getting the image from photo library
+    func loadImage() {
+        guard let inputImage = inputImage else {return}
+        productImage = Image(uiImage: inputImage)
+    }
     
     //Converting current date format to string
     let currentDate: String = {
@@ -35,21 +49,6 @@ struct AddNewProductView: View {
         return dateToString
     }()
     
-    //Checking if all information has been entered
-    var isValid: Bool {
-        if $product.productName.wrappedValue == "" || $product.productDetails.wrappedValue == "" || $product.productPrice.wrappedValue == "" || product.productImage == nil {
-            return false
-        }
-        
-        return true
-    }
-    
-    //Getting the image from photo library
-    func loadImage() {
-        guard let inputImage = inputImage else {return}
-        product.productImage = Image(uiImage: inputImage)
-    }
-    
     //Writing the data to Firebase Realtime-Database and put the product image to the Firebase Storage
     func addNewProduct() {
         
@@ -59,7 +58,7 @@ struct AddNewProductView: View {
         
         let imageData = (inputImage?.pngData())!
         
-        storage.child("images/\(uuid).png").putData(imageData, metadata: nil, completion: {
+        storage.child("images/\(productId).png").putData(imageData, metadata: nil, completion: {
             _, error in
             
             guard error == nil else {
@@ -67,7 +66,7 @@ struct AddNewProductView: View {
                 return
             }
             
-            self.storage.child("images/\(uuid).png").downloadURL(completion: { [self]
+            self.storage.child("images/\(productId).png").downloadURL(completion: { [self]
                 url, error in
                 
                 guard let url = url, error == nil else {
@@ -80,20 +79,22 @@ struct AddNewProductView: View {
                 
                 
                 let productInfo: [String: Any] = [
-                    "category": $product.category.wrappedValue,
+                    "category": productCategory,
                     "date": currentDate,
-                    "details": $product.productDetails.wrappedValue,
-                    "name": $product.productName.wrappedValue,
-                    "price": $product.productPrice.wrappedValue,
-                    "stock": $product.stock.wrappedValue,
-                    "photoURL": urlString,
-                    "timestamp": Int(Date().timeIntervalSince1970 * 1000000)
+                    "details": productDetails,
+                    "name": productName,
+                    "price": productPrice,
+                    "stock": productStock,
+                    "photoURL": urlString
                 ]
                 
-                database.child("Products").child("\(uuid)").setValue(productInfo)
+                database.child("Products").child("\(productId)").setValue(productInfo)
                 
                 showAlert = true
                 loading = false
+                
+                presentationMode.wrappedValue.dismiss()
+                presentationMode.wrappedValue.dismiss()
             })
         })
         
@@ -101,40 +102,39 @@ struct AddNewProductView: View {
     
     var body: some View {
         
-        NavigationView {
             Form {
-                Picker(selection: $product.category, label: Text("SelectCategory")) {
-                    ForEach(0 ..< ProductInfo.categories.count) {
-                        Text(ProductInfo.categories[$0]).tag($0)
+                Picker(selection: $productCategory, label: Text("SelectCategory")) {
+                    ForEach(0 ..< categories.count) {
+                        Text(categories[$0]).tag($0)
                     }
                 }
                 
-                Stepper(value: $product.stock, in: 1...100) {
+                Stepper(value: $productStock, in: 1...100) {
                     HStack{
                         Text("InStock")
-                        Text("\(product.stock)")
+                        Text("\(productStock)")
                     }
                 }
                 
                 Section {
-                    TextField("ProductName", text: $product.productName)
+                    TextField("ProductName", text: $productName)
                     HStack{
                         Text("₺")
-                        TextField("Price", text: $product.productPrice)
+                        TextField("Price", text: $productPrice)
                     }
                 }
                 
                 Section {
                     HStack{
                         Text("Details")
-                        TextEditor(text: $product.productDetails)
+                        TextEditor(text: $productDetails)
                     }
                 }
                 
                 Section {
                     HStack{
-                        if product.productImage != nil {
-                            product.productImage?.resizable().scaledToFit()
+                        if productImage != nil {
+                            productImage?.resizable().scaledToFit()
                         } else {
                             Text("AddPicture")
                         }
@@ -151,18 +151,17 @@ struct AddNewProductView: View {
                         Button(action: {
                             addNewProduct()
                         }) {
-                            Text("AddProduct").padding(.leading, 15)
+                            Text("Done").padding(.leading, 15)
                         }
-                    }.disabled(!isValid)
+                    }
                 }
             }
-            .navigationBarTitle(Text("AddNewProduct"))
+            .navigationBarTitle(Text("EditProduct"))
             .alert(isPresented: $showAlert) {
-                Alert(title: Text("Success"), dismissButton: .default(Text("Okay")))
+                Alert(title: Text("Success2"), dismissButton: .default(Text("Okay")))
             }
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
                 ImagePicker(image: $inputImage)
             }
-        }
     }
 }
