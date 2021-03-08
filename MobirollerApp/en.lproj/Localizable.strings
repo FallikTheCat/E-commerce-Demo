@@ -37,5 +37,12 @@
 "AreYouSureDeleting" = "Are you sure you want to delete this product?";
 "CannotUndone" = "This cannot be undone!";
 "Cancel" = "Cancel";
+"Art" = "Art";
+"Electronics" = "Electronics";
+"Fashion" = "Fashion";
+"Health" = "Health";
+"Home" = "Home";
+"Sports" = "Sports";
+"Tools" = "Tools & Equipments";
 
 

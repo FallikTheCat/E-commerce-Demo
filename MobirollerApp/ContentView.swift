@@ -24,11 +24,11 @@ struct ContentView: View {
                         Text("Products")
                     }
                 }.tag(0)
-            AddNewProductView(products: products)
+            AddNewProductView(selection: $selected, products: products)
                 .tabItem {
                     if self.selected == 1 {
                         Image(systemName: "icloud.and.arrow.up")
-                        Text("Add Product")
+                        Text("AddProduct")
                     }else {
                         Image(systemName: "icloud.and.arrow.up.fill")
                         Text("AddProduct")

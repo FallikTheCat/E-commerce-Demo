@@ -11,6 +11,8 @@ import FirebaseStorage
 
 struct AddNewProductView: View {
     
+    @Binding var selection: Int
+    
     private let storage = Storage.storage().reference()
     private let database = Database.database().reference()
     
@@ -97,6 +99,9 @@ struct AddNewProductView: View {
                 
                 showAlert = true
                 loading = false
+                withAnimation{
+                    selection = 0
+                }
             })
         })
         
@@ -108,7 +113,7 @@ struct AddNewProductView: View {
             Form {
                 Picker(selection: $product.category, label: Text("SelectCategory")) {
                     ForEach(0 ..< ProductInfo.categories.count) {
-                        Text(ProductInfo.categories[$0]).tag($0)
+                        Text(LocalizedStringKey(ProductInfo.categories[$0])).tag($0)
                     }
                 }
                 
@@ -139,7 +144,7 @@ struct AddNewProductView: View {
                         if product.productImage != nil {
                             product.productImage?.resizable().scaledToFit()
                         } else {
-                            Text("AddPicture")
+                            Text("AddPicture").foregroundColor(.blue).frame(maxWidth: .infinity)
                         }
                     }.onTapGesture {
                         self.showingImagePicker = true

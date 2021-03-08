@@ -11,7 +11,7 @@ import SwiftUI
 class ProductInfo: ObservableObject {
     
     //Static Categories
-    static let categories = ["Art", "Electronics", "Fashion", "Health", "Home", "Sports", "Tools & Equipment"]
+    static let categories = ["Art", "Electronics", "Fashion", "Health", "Home", "Sports", "Tools"]
     
     //Selected Category, number of stock, product name etc...
     @Published var category: Int = 0

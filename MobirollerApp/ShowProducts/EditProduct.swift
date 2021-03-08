@@ -32,7 +32,7 @@ struct EditProduct: View {
     
     @State var productImage: Image?
     
-    @State private var categories = ["Art", "Electronics", "Fashion", "Health", "Home", "Sports", "Tools & Equipment"]
+    @State private var categories = ["Art", "Electronics", "Fashion", "Health", "Home", "Sports", "Tools"]
     
     //Getting the image from photo library
     func loadImage() {
@@ -108,7 +108,7 @@ struct EditProduct: View {
             Form {
                 Picker(selection: $productCategory, label: Text("SelectCategory")) {
                     ForEach(0 ..< categories.count) {
-                        Text(categories[$0]).tag($0)
+                        Text(LocalizedStringKey(categories[$0])).tag($0)
                     }
                 }
                 
@@ -139,7 +139,7 @@ struct EditProduct: View {
                         if productImage != nil {
                             productImage?.resizable().scaledToFit()
                         } else {
-                            Text("AddPicture")
+                            Text("AddPicture").foregroundColor(.blue).frame(maxWidth: .infinity)
                         }
                     }.onTapGesture {
                         self.showingImagePicker = true
