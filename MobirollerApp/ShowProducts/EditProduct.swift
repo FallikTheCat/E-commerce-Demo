@@ -56,8 +56,10 @@ struct EditProduct: View {
             loading = true
         }
         
+        //Converting image to data
         let imageData = (inputImage?.pngData())!
         
+        //Storing data to Firebase Storage
         storage.child("images/\(productId).png").putData(imageData, metadata: nil, completion: {
             _, error in
             
@@ -66,6 +68,7 @@ struct EditProduct: View {
                 return
             }
             
+            //Getting download URL
             self.storage.child("images/\(productId).png").downloadURL(completion: { [self]
                 url, error in
                 

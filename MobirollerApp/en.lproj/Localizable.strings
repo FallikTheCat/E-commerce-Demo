@@ -27,4 +27,15 @@
 "Okay" = "Okay!";
 "Done" = "Done";
 "Success2" = "Your Product Has Been Successfully Edited!";
+"Sorting" = "Sorting:";
+"byName" = "Name";
+"byStock" = "Stock";
+"byPriceHigh" = "Price High";
+"byPriceLow" = "Price Low";
+"byCategory" = "Category";
+"Delete" = "Delete Product";
+"AreYouSureDeleting" = "Are you sure you want to delete this product?";
+"CannotUndone" = "This cannot be undone!";
+"Cancel" = "Cancel";
+
 

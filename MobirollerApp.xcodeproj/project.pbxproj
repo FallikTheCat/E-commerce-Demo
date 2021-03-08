@@ -60,10 +60,10 @@
 		4E107FC025F28B4C001D731F /* ShowProducts */ = {
 			isa = PBXGroup;
 			children = (
+				4E47916725F68B15002C7970 /* EditProduct.swift */,
 				4E107FC725F29D7E001D731F /* GetProducts.swift */,
 				4E107FC425F297AE001D731F /* ProductDetails.swift */,
 				4E107FC125F28B5E001D731F /* ProductsView.swift */,
-				4E47916725F68B15002C7970 /* EditProduct.swift */,
 			);
 			path = ShowProducts;
 			sourceTree = "<group>";

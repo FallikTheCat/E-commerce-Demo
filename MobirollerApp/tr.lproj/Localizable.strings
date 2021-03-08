@@ -27,3 +27,13 @@
 "Okay" = "Tamamdır!";
 "Done" = "Tamamla";
 "Success2" = "Ürünün başarılı bir şekilde düzenlendi!";
+"Sorting" = "Sıralama:";
+"byName" = "İsim";
+"byStock" = "Stok";
+"byPriceHigh" = "En Yüksek Fiyat";
+"byPriceLow" = "En Düşük Fiyat";
+"byCategory" = "Kategori";
+"Delete" = "Ürünü Sil";
+"AreYouSureDeleting" = "Bu ürünü silmek istediğinizden emin misiniz?";
+"CannotUndone" = "Bu işlem geri alınamaz!";
+"Cancel" = "İptal";

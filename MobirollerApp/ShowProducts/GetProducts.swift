@@ -22,11 +22,23 @@ class GetProducts: ObservableObject {
     @Published var productStocks: [Int] = []
     @Published var productPhotoURL: [String] = []
     
+    @Published var sorting: String = "byStock"
+    
     //Reading the products from Firebase Database
     func getProducts() {
-        database.child("SortedItems").child("byStock").observe(.value, with: { snapshot  in
+        database.child("SortedItems").child("\(sorting)").observe(.value, with: { snapshot  in
             
             guard let value = snapshot.value as? [[String:Any]] else {
+                
+                self.productList = []
+                self.priceList = []
+                self.productCategories = []
+                self.productDates = []
+                self.productDetails = []
+                self.productIDs = []
+                self.productStocks = []
+                self.productPhotoURL = []
+                
                 return
             }
             
@@ -58,20 +70,6 @@ class GetProducts: ObservableObject {
                     self.productStocks.append(stock)
                 }
             }
-            
-//            guard let value = snapshot.value as? [String:[String:Any]] else {
-//                return
-//            }
-
-//            self.productList = []
-//            self.priceList = []
-//
-//            value.forEach { value in
-//                if let name = value["name"] as? String, let price = value["price"] as? Int {
-//                    self.productList.append(name)
-//                    self.priceList.append(price)
-//                }
-//            }
             
         })
     }

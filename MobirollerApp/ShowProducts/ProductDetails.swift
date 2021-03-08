@@ -7,8 +7,13 @@
 
 import SwiftUI
 import FirebaseStorage
+import FirebaseDatabase
 
 struct ProductDetails: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    
+    @ObservedObject var products: GetProducts
     
     @State var productCategory: Int
     @State var productDate: String
@@ -19,10 +24,17 @@ struct ProductDetails: View {
     @State var productPrice: String
     @State var productStock: Int
     
+    @State var productIndex: Int
+    
     @State var productImage: UIImage!
+    
+    private let database = Database.database().reference()
     
     @State private var categories = ["Art", "Electronics", "Fashion", "Health", "Home", "Sports", "Tools & Equipment"]
     
+    @State private var showingAlert = false
+    
+    //Getting the image from Firebase Storage URL
     func getPicture() {
         let url = URL(string: productPhotoURL)!
         let task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
@@ -41,9 +53,18 @@ struct ProductDetails: View {
         task.resume()
     }
     
+    //Converting the image data to showable image
     func convertImage() -> Image {
         let image = Image(uiImage: productImage)
         return image
+    }
+    
+    //Deleting product from Firebase Database
+    func deleteProduct() {
+        database.child("Products").child(products.productIDs[productIndex]).removeValue()
+        
+        //Screen pop
+        presentationMode.wrappedValue.dismiss()
     }
     
     var body: some View {
@@ -87,8 +108,28 @@ struct ProductDetails: View {
                 }.padding(.top, 16)
         
                 if productImage != nil {
-                    NavigationLink(destination: EditProduct(inputImage: productImage, productCategory: productCategory, productDetails: productDetails, productId: productId, productName: productName, productPhotoURL: productPhotoURL, productPrice: productPrice, productStock: productStock, productImage: convertImage())) {
-                            Text("Edit").foregroundColor(.blue)
+                    HStack(spacing: 128){
+                        NavigationLink(destination: EditProduct(inputImage: productImage, productCategory: productCategory, productDetails: productDetails, productId: productId, productName: productName, productPhotoURL: productPhotoURL, productPrice: productPrice, productStock: productStock, productImage: convertImage())) {
+                                Text("Edit").foregroundColor(.blue)
+                        }
+                        
+                        Button(action: {
+                            showingAlert = true
+                        }) {
+                            Text("Delete").foregroundColor(.red)
+                        }
+                        .alert(isPresented:$showingAlert) {
+                            Alert(
+                                title: Text("AreYouSureDeleting"),
+                                message: Text("CannotUndone"),
+                                primaryButton: .destructive(Text("Delete")) {
+                                    deleteProduct()
+                                },
+                                secondaryButton: .cancel(Text("Cancel")) {
+                                    showingAlert = false
+                                }
+                            )
+                        }
                     }.padding(.top, 16)
                 }
                 
