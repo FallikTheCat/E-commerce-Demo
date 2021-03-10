@@ -103,7 +103,7 @@ struct ProductDetails: View {
                     }.frame(maxWidth: .infinity, alignment: .leading)
                     HStack{
                         Text("Category")
-                        Text("\(productCategory)")
+                        Text(LocalizedStringKey(categories[productCategory]))
                     }.frame(maxWidth: .infinity, alignment: .leading)
                 }.padding(.top, 16).padding(.leading, 16)
         
