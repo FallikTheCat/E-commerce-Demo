@@ -174,3 +174,12 @@ struct AddNewProductView: View {
         }
     }
 }
+
+struct AddNewProductsView_Previews: PreviewProvider {
+    
+    @State static var selection = 0
+    
+    static var previews: some View {
+        AddNewProductView(selection: $selection, products: GetProducts())
+    }
+}

@@ -72,3 +72,9 @@ struct ProductsView: View {
         }
     }
 }
+
+struct ProductsView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProductsView(products: GetProducts())
+    }
+}

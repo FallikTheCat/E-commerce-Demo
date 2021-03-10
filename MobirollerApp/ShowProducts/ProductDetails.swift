@@ -84,28 +84,28 @@ struct ProductDetails: View {
                     HStack{
                         Text("Name")
                         Text("\(productName)")
-                    }
+                    }.frame(maxWidth: .infinity, alignment: .leading)
                     HStack{
                         Text("Date")
                         Text("\(productDate)")
-                    }
+                    }.frame(maxWidth: .infinity, alignment: .leading)
                     HStack{
                         Text("Details")
                         Text("\(productDetails)")
-                    }
+                    }.frame(maxWidth: .infinity, alignment: .leading)
                     HStack{
                         Text("Price2")
                         Text("\(productPrice)")
-                    }
+                    }.frame(maxWidth: .infinity, alignment: .leading)
                     HStack{
                         Text("Stock")
                         Text("\(productStock)")
-                    }
+                    }.frame(maxWidth: .infinity, alignment: .leading)
                     HStack{
                         Text("Category")
                         Text("\(productCategory)")
-                    }
-                }.padding(.top, 16)
+                    }.frame(maxWidth: .infinity, alignment: .leading)
+                }.padding(.top, 16).padding(.leading, 16)
         
                 if productImage != nil {
                     HStack(spacing: 128){
@@ -136,5 +136,11 @@ struct ProductDetails: View {
             }.onAppear(perform: getPicture)
             .navigationBarTitle(Text("\(productName)"))
         }
+    }
+}
+
+struct ProductDetails_Previews: PreviewProvider {
+    static var previews: some View {
+        ProductDetails(products: GetProducts(), productCategory: 0, productDate: "01/01/1970", productDetails: "preview", productId: "123456abc", productName: "preview", productPhotoURL: "randomUrl", productPrice: "0000", productStock: 1, productIndex: 1)
     }
 }

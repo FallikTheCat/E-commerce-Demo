@@ -168,3 +168,9 @@ struct EditProduct: View {
             }
     }
 }
+
+struct EditProduct_Previews: PreviewProvider {
+    static var previews: some View {
+        EditProduct(productCategory: 0, productDetails: "preview", productId: "123456abc", productName: "preview", productPhotoURL: "randomUrl", productPrice: "0000", productStock: 1)
+    }
+}

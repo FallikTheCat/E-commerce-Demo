@@ -17,20 +17,20 @@ struct ContentView: View {
             ProductsView(products: products)
                 .tabItem {
                     if self.selected == 0 {
-                        Image(systemName: "tray.and.arrow.down")
+                        Image(systemName: "shippingbox.fill")
                         Text("Products")
                     }else {
-                        Image(systemName: "tray.and.arrow.down.fill")
+                        Image(systemName: "shippingbox")
                         Text("Products")
                     }
                 }.tag(0)
             AddNewProductView(selection: $selected, products: products)
                 .tabItem {
                     if self.selected == 1 {
-                        Image(systemName: "icloud.and.arrow.up")
+                        Image(systemName: "archivebox.fill")
                         Text("AddProduct")
                     }else {
-                        Image(systemName: "icloud.and.arrow.up.fill")
+                        Image(systemName: "archivebox")
                         Text("AddProduct")
                     }
                 }.tag(1)
