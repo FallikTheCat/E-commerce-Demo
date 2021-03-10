@@ -62,7 +62,7 @@ Ayrıca View'lar bu dosyalardaki durumlara göre şekilleniyor.
 * Viewlar sayfaya yüklendiğinde, onAppear methodu ile ***getProducts()*** fonksiyonu tetikleniyor ve Database'deki veriler Viewlara aktarılıyor.
 
 #### Views
-* `AddNewProductView`, `EditProduct`, `ProductDetails` and `ProductsView` dosyaları ise **View**'lardan oluşuyor.
+* `AddNewProductView`, `EditProduct`, `ProductDetails` ve `ProductsView` dosyaları ise **View**'lardan oluşuyor.
 * `ProductsView`, Database'deki ürünlerin listelendiği sayfa. Bu sayfada `GetProducts` ViewModel'indeki gelen ürün listesi, sıralama şekli gibi verilere göre listeleme yapılıyor.
 * `AddNewProductView`, yeni ürünün ekleneceği sayfadaki formu içeriyor.
 * `ProductDetails`, tıklanan ürünün detaylarının görüldüğü sayfa.
