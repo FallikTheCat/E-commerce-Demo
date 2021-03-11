@@ -14,7 +14,7 @@ class GetProducts: ObservableObject {
     
     //Shared lists
     @Published var productList: [String] = []
-    @Published var priceList: [String] = []
+    @Published var priceList: [Int] = []
     @Published var productCategories: [Int] = []
     @Published var productDates: [String] = []
     @Published var productDetails: [String] = []
@@ -58,7 +58,7 @@ class GetProducts: ObservableObject {
                    let id = value["id"] as? String,
                    let name = value["name"] as? String,
                    let photoURL = value["photoURL"] as? String,
-                   let price = value["price"] as? String,
+                   let price = value["price"] as? Int,
                    let stock = value["stock"] as? Int {
                     self.productCategories.append(category)
                     self.productDates.append(date)

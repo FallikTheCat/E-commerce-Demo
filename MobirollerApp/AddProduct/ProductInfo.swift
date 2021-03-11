@@ -18,6 +18,6 @@ class ProductInfo: ObservableObject {
     @Published var stock: Int = 1
     @Published var productName: String = ""
     @Published var productDetails: String = ""
-    @Published var productPrice: String = ""
+    @Published var productPrice: Int = 00
     @Published var productImage: Image?
 }

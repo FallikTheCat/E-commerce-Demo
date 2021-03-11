@@ -25,6 +25,14 @@ struct AddNewProductView: View {
     @State private var showAlert = false
     @State private var inputImage: UIImage?
     
+    @State private var stringPrice: String = ""
+    
+    //Converting price value to String to Int
+    func priceStringToInt() {
+        let priceInt = Int(stringPrice)
+        product.productPrice = priceInt!
+    }
+    
     //Creating a unique id for the product
     let uuid = UUID().uuidString
     
@@ -39,7 +47,7 @@ struct AddNewProductView: View {
     
     //Checking if all information has been entered
     var isValid: Bool {
-        if $product.productName.wrappedValue == "" || $product.productDetails.wrappedValue == "" || $product.productPrice.wrappedValue == "" || product.productImage == nil {
+        if $product.productName.wrappedValue == "" || $product.productDetails.wrappedValue == "" || $product.productPrice.wrappedValue == 00 || product.productImage == nil {
             return false
         }
         
@@ -88,6 +96,7 @@ struct AddNewProductView: View {
                     "category": $product.category.wrappedValue,
                     "date": currentDate,
                     "details": $product.productDetails.wrappedValue,
+                    "id": uuid,
                     "name": $product.productName.wrappedValue,
                     "price": $product.productPrice.wrappedValue,
                     "stock": $product.stock.wrappedValue,
@@ -128,7 +137,9 @@ struct AddNewProductView: View {
                     TextField("ProductName", text: $product.productName)
                     HStack{
                         Text("₺")
-                        TextField("Price", text: $product.productPrice)
+                        TextField("Price", text: $stringPrice).onChange(of: stringPrice, perform: { value in
+                            priceStringToInt()
+                        })
                     }
                 }
                 

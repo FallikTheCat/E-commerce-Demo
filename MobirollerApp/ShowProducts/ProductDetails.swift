@@ -21,7 +21,7 @@ struct ProductDetails: View {
     @State var productId: String
     @State var productName: String
     @State var productPhotoURL: String
-    @State var productPrice: String
+    @State var productPrice: Int
     @State var productStock: Int
     
     @State var productIndex: Int
@@ -141,6 +141,6 @@ struct ProductDetails: View {
 
 struct ProductDetails_Previews: PreviewProvider {
     static var previews: some View {
-        ProductDetails(products: GetProducts(), productCategory: 0, productDate: "01/01/1970", productDetails: "preview", productId: "123456abc", productName: "preview", productPhotoURL: "randomUrl", productPrice: "0000", productStock: 1, productIndex: 1)
+        ProductDetails(products: GetProducts(), productCategory: 0, productDate: "01/01/1970", productDetails: "preview", productId: "123456abc", productName: "preview", productPhotoURL: "randomUrl", productPrice: 0000, productStock: 1, productIndex: 1)
     }
 }

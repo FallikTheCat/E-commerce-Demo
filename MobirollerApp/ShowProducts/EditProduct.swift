@@ -27,12 +27,25 @@ struct EditProduct: View {
     @State var productId: String
     @State var productName: String
     @State var productPhotoURL: String
-    @State var productPrice: String
+    @State var productPrice: Int
     @State var productStock: Int
     
     @State var productImage: Image?
     
     @State private var categories = ["Art", "Electronics", "Fashion", "Health", "Home", "Sports", "Tools"]
+    
+    @State private var stringPrice = ""
+    
+    //Converting price value to String to Int
+    func priceStringToInt() {
+        let priceInt = Int(stringPrice)
+        productPrice = priceInt!
+    }
+    
+    func priceToString() {
+        let priceToString = String(productPrice)
+        stringPrice = priceToString
+    }
     
     //Getting the image from photo library
     func loadImage() {
@@ -123,8 +136,10 @@ struct EditProduct: View {
                     TextField("ProductName", text: $productName)
                     HStack{
                         Text("₺")
-                        TextField("Price", text: $productPrice)
-                    }
+                        TextField("Price", text: $stringPrice).onChange(of: stringPrice, perform: { value in
+                            priceStringToInt()
+                        })
+                    }.onAppear(perform: priceToString)
                 }
                 
                 Section {
@@ -171,6 +186,6 @@ struct EditProduct: View {
 
 struct EditProduct_Previews: PreviewProvider {
     static var previews: some View {
-        EditProduct(productCategory: 0, productDetails: "preview", productId: "123456abc", productName: "preview", productPhotoURL: "randomUrl", productPrice: "0000", productStock: 1)
+        EditProduct(productCategory: 0, productDetails: "preview", productId: "123456abc", productName: "preview", productPhotoURL: "randomUrl", productPrice: 0000, productStock: 1)
     }
 }
